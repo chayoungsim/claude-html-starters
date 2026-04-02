@@ -1,0 +1,145 @@
+@use "../abstracts" as *;
+
+// ─────────────────────────────────────────────
+// Footer — 사이트 하단 영역
+// ─────────────────────────────────────────────
+
+.footer {
+  background-color: color(bg-subtle);
+  color: color(text-muted);
+  padding-top: 6rem;
+
+  &__inner {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    padding-bottom: 4rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    @include respond(md) {
+      padding-inline: 3rem;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(lg) {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    @include respond(xl) {
+      padding-inline: 4rem;
+    }
+  }
+
+  // 브랜드 영역 (로고 + 슬로건)
+  &__brand {
+    img { display: block; }
+  }
+
+  &__tagline {
+    margin-top: 1.6rem;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-loose);
+    max-width: 28rem;
+  }
+
+  // 링크 그룹
+  &__links {
+    display: flex;
+    gap: 4rem;
+
+    dl {
+      dt {
+        font-weight: 700;
+        color: color(text);
+        margin-bottom: 1.2rem;
+        font-size: var(--font-size-sm);
+      }
+
+      dd {
+        margin: 0;
+        margin-bottom: 0.8rem;
+
+        a {
+          font-size: var(--font-size-sm);
+          color: color(text-muted);
+          text-decoration: none;
+          transition: color 0.2s;
+
+          &:hover, &:focus-visible { color: color(primary); }
+        }
+      }
+    }
+  }
+
+  // 연락처
+  &__contact {
+    font-style: normal;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-loose);
+
+    p { margin: 0; }
+
+    a {
+      color: color(text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover { color: color(primary); }
+    }
+  }
+
+  // 하단 카피라이트 바
+  &__bottom {
+    border-top: 1px solid color(border);
+  }
+
+  &__bottom-inner {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    padding-block: 2.4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+
+    @include respond(md) {
+      padding-inline: 3rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include respond(xl) {
+      padding-inline: 4rem;
+    }
+  }
+
+  &__copy {
+    font-size: var(--font-size-sm);
+    margin: 0;
+  }
+
+  &__policy {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      font-size: var(--font-size-sm);
+      color: color(text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover { color: color(primary); }
+    }
+  }
+}

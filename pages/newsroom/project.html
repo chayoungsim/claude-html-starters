@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="브랜드명의 주요 프로젝트와 포트폴리오를 소개합니다.">
+    <title>프로젝트 | 브랜드명</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <p id="accessibility"><a href="#container">본문바로가기</a></p>
+    <div id="wrap">
+        <div data-include="../../pages/_inc/header.html"></div>
+
+        <main id="container" tabindex="-1">
+
+        <!-- 페이지 히어로 -->
+        <section class="page-hero">
+            <div class="container">
+                <p class="page-hero__label">Projects</p>
+                <h1 class="page-hero__title">프로젝트</h1>
+                <p class="page-hero__desc">브랜드명이 수행한 주요 프로젝트를 소개합니다.</p>
+            </div>
+        </section>
+
+        <!-- 필터 탭 -->
+        <section class="section-projects">
+            <div class="container">
+
+                <div class="project-filter" role="tablist" aria-label="프로젝트 필터">
+                    <button class="project-filter__btn is-active" role="tab" aria-selected="true" data-filter="all">전체</button>
+                    <button class="project-filter__btn" role="tab" aria-selected="false" data-filter="web">웹</button>
+                    <button class="project-filter__btn" role="tab" aria-selected="false" data-filter="app">앱</button>
+                    <button class="project-filter__btn" role="tab" aria-selected="false" data-filter="brand">브랜딩</button>
+                </div>
+
+                <ul class="project-grid">
+                    <li class="project-card" data-category="web">
+                        <a href="#" class="project-card__link" aria-label="프로젝트 명칭 A 상세보기">
+                            <div class="project-card__thumb" aria-hidden="true"></div>
+                            <div class="project-card__info">
+                                <span class="project-card__category">웹</span>
+                                <h2 class="project-card__title">프로젝트 명칭 A</h2>
+                                <p class="project-card__desc">프로젝트에 대한 간략한 설명이 들어갑니다.</p>
+                                <span class="project-card__year">2026</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project-card" data-category="app">
+                        <a href="#" class="project-card__link" aria-label="프로젝트 명칭 B 상세보기">
+                            <div class="project-card__thumb" aria-hidden="true"></div>
+                            <div class="project-card__info">
+                                <span class="project-card__category">앱</span>
+                                <h2 class="project-card__title">프로젝트 명칭 B</h2>
+                                <p class="project-card__desc">프로젝트에 대한 간략한 설명이 들어갑니다.</p>
+                                <span class="project-card__year">2025</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project-card" data-category="brand">
+                        <a href="#" class="project-card__link" aria-label="프로젝트 명칭 C 상세보기">
+                            <div class="project-card__thumb" aria-hidden="true"></div>
+                            <div class="project-card__info">
+                                <span class="project-card__category">브랜딩</span>
+                                <h2 class="project-card__title">프로젝트 명칭 C</h2>
+                                <p class="project-card__desc">프로젝트에 대한 간략한 설명이 들어갑니다.</p>
+                                <span class="project-card__year">2025</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project-card" data-category="web">
+                        <a href="#" class="project-card__link" aria-label="프로젝트 명칭 D 상세보기">
+                            <div class="project-card__thumb" aria-hidden="true"></div>
+                            <div class="project-card__info">
+                                <span class="project-card__category">웹</span>
+                                <h2 class="project-card__title">프로젝트 명칭 D</h2>
+                                <p class="project-card__desc">프로젝트에 대한 간략한 설명이 들어갑니다.</p>
+                                <span class="project-card__year">2024</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project-card" data-category="app">
+                        <a href="#" class="project-card__link" aria-label="프로젝트 명칭 E 상세보기">
+                            <div class="project-card__thumb" aria-hidden="true"></div>
+                            <div class="project-card__info">
+                                <span class="project-card__category">앱</span>
+                                <h2 class="project-card__title">프로젝트 명칭 E</h2>
+                                <p class="project-card__desc">프로젝트에 대한 간략한 설명이 들어갑니다.</p>
+                                <span class="project-card__year">2024</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="project-card" data-category="brand">
+                        <a href="#" class="project-card__link" aria-label="프로젝트 명칭 F 상세보기">
+                            <div class="project-card__thumb" aria-hidden="true"></div>
+                            <div class="project-card__info">
+                                <span class="project-card__category">브랜딩</span>
+                                <h2 class="project-card__title">프로젝트 명칭 F</h2>
+                                <p class="project-card__desc">프로젝트에 대한 간략한 설명이 들어갑니다.</p>
+                                <span class="project-card__year">2024</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+        </main>
+
+        <div data-include="../../pages/_inc/footer.html"></div>
+    </div>
+    <script src="../../assets/js/common.js"></script>
+    <script>
+        // 프로젝트 필터 기능
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.project-filter__btn');
+            const cards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.dataset.filter;
+
+                    // 활성 버튼 업데이트
+                    filterBtns.forEach((b) => {
+                        b.classList.remove('is-active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    btn.classList.add('is-active');
+                    btn.setAttribute('aria-selected', 'true');
+
+                    // 카드 필터링
+                    cards.forEach((card) => {
+                        const match = filter === 'all' || card.dataset.category === filter;
+                        card.style.display = match ? '' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

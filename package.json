@@ -1,0 +1,16 @@
+{
+  "name": "claude-html-starters",
+  "version": "1.0.0",
+  "description": "브랜드 웹사이트 HTML/SCSS 스타터 템플릿",
+  "scripts": {
+    "dev": "concurrently \"npm run sass\" \"npm run serve\"",
+    "sass": "sass --watch assets/scss/style.scss:assets/css/style.css --style=expanded --source-map",
+    "build": "sass assets/scss/style.scss:assets/css/style.css --style=compressed --no-source-map",
+    "serve": "live-server --port=3000 --open=pages/main/index.html"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "live-server": "^1.2.2",
+    "sass": "^1.77.0"
+  }
+}

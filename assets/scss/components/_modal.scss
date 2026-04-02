@@ -1,0 +1,104 @@
+@use "../abstracts" as *;
+
+// ─────────────────────────────────────────────
+// Modal — 팝업 다이얼로그
+// ─────────────────────────────────────────────
+
+// 배경 딤드 레이어
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// 모달 컨테이너
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -46%);
+  z-index: 901;
+  width: min(90vw, 64rem);
+  max-height: 90vh;
+  background: color(surface);
+  border-radius: 1.2rem;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+  }
+
+  // 헤더 영역
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2.4rem;
+    border-bottom: 1px solid color(border);
+    flex-shrink: 0;
+
+    h2 {
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      color: color(text);
+      margin: 0;
+    }
+  }
+
+  // 본문 영역 (스크롤 가능)
+  &__body {
+    padding: 2.4rem;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  // 하단 버튼 영역
+  &__footer {
+    padding: 1.6rem 2.4rem;
+    border-top: 1px solid color(border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  // 닫기 버튼
+  &__close {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 0.6rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: color(text-muted);
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+
+    &:hover {
+      background: color(bg-subtle);
+      color: color(text);
+    }
+
+    svg { pointer-events: none; }
+  }
+}

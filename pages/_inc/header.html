@@ -1,0 +1,104 @@
+
+
+<header class="header" id="header" role="banner">
+    <div class="header__inner">
+        <h1 class="header__logo">
+            <a href="/pages/main/index.html">
+                <span class="header__logo-text">Brand Name</span>
+            </a>
+        </h1>
+
+        <nav class="header__nav" role="navigation" aria-label="주요 메뉴">
+            <ul class="header__nav-lists">
+                <li class="header__nav-item">
+                    <a href="/pages/product/intro.html" class="header__nav-link"><span>Product</span></a>
+                    <ul class="header__nav-sublist">
+                        <li><a href="/pages/product/intro.html">Intro</a></li>
+                        <li><a href="/pages/product/collaborative.html">Collaborative Robot</a></li>
+                        <li><a href="/pages/product/mobile.html">Mobile Robot</a></li>
+                        <li><a href="/pages/product/custom.html">Customized robot</a></li>
+                    </ul>
+                </li>                
+                <li class="header__nav-item">
+                    <a href="/pages/company/company.html" class="header__nav-link"><span>Company</span></a>
+                    <ul class="header__nav-sublist">
+                        <li><a href="/pages/company/company.html">Company</a></li>
+                        <li><a href="/pages/company/history.html">History</a></li>
+                    </ul>
+                </li>
+                <li class="header__nav-item">
+                    <a href="/pages/newsroom/newsroom.html" class="header__nav-link"><span>Newsroom</span></a>
+                    <ul class="header__nav-sublist">
+                        <li><a href="/pages/newsroom/newsroom.html">Press Release</a></li>
+                        <li><a href="/pages/newsroom/news.html">News</a></li>  
+                    </ul>     
+                </li>
+                <li class="header__nav-item">
+                    <a href="/pages/support/support.html" class="header__nav-link"><span>Support</span></a>
+                    <ul class="header__nav-sublist">
+                        <li><a href="/pages/support/support.html">Support</a></li>
+                        <li><a href="/pages/support/faq.html">FAQ</a></li>  
+                    </ul>     
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__utils">      
+            
+            <!-- <button class="header__utils--theme" type="button" aria-label="테마 변경">
+                <span class="icon-sun">태양</span>
+                <span class="icon-moon">달</span>
+            </button>  -->
+
+            <div class="global">
+                <button type="button" class="global-link" aria-label="언어 선택 리스트 열기" aria-expanded="false" aria-controls="langMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                        <path d="M2 12h20"/>
+                    </svg>
+                    <span class="blind">언어 선택 리스트 열기</span>
+                </button>
+                <nav class="toggle-menu lang" id="langMenu">
+                    <ul>
+                        <li>
+                            <a href="javascript:changeLocale('ko')" class="current" title="현재 페이지">
+                                KOR
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:changeLocale('en')" title="영문 홈페이지(새 창에서 열림)">
+                                ENG
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>    
+
+            <button class="header__utils--mobile" type="button" aria-label="모바일 메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
+                <span class="blind">메뉴</span>
+                <span class="hamburger" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+
+        </div>
+    </div>
+
+    <aside class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-label="모바일 메뉴">
+        <nav role="navigation" aria-label="모바일 내비게이션">
+            <ul>
+                <li><a href="/pages/company/about.html">회사소개</a></li>
+                <li><a href="/pages/company/history.html">연혁</a></li>
+                <li><a href="/pages/project/project.html">프로젝트</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" aria-hidden="true"></div>
+
+</header>
+
+
+

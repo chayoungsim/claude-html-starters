@@ -1,0 +1,150 @@
+@use '../abstracts' as *;
+
+// ─────────────────────────────────────────────
+// page-hero
+// ─────────────────────────────────────────────
+.section-hero {
+  background: color('bg-subtle');
+}
+.page-hero {
+  padding-block: 12rem 6rem;
+  background: color('bg-subtle');
+
+  &__label {
+    font-size: $font-size-sm;
+    color: color(primary);
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    margin-bottom: 1.6rem;
+  }
+
+  &__desc {
+    font-size: $font-size-md;
+    color: color(text-muted);
+  }
+}
+
+// ─────────────────────────────────────────────
+// section-vision
+// ─────────────────────────────────────────────
+.section-vision {
+  padding-block: 8rem;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+
+  @include respond('md') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.vision-item {
+  &__label {
+    // 전역 h2(2xl) 대신 컴포넌트 라벨 크기로 재정의
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: color(primary);
+    margin-bottom: 1.6rem;
+  }
+
+  &__text {
+    font-size: $font-size-sm;
+    color: color(text-muted);
+    line-height: $line-height-loose;
+  }
+}
+
+// ─────────────────────────────────────────────
+// section-team
+// ─────────────────────────────────────────────
+.section-team {
+  padding-block: 8rem;
+  background-color: color(bg-subtle);
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section-label {
+  font-size: $font-size-sm;
+  color: color(primary);
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  // 전역 h2(2xl) 대신 섹션 헤더용 크기로 재정의
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.2rem;
+  list-style: none;
+
+  @include respond('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: color(bg);
+  border-radius: 1.2rem;
+  padding: 3.2rem;
+
+  &__photo {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: color(border);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__name {
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    color: color(text);
+  }
+
+  &__role {
+    font-size: $font-size-sm;
+    color: color(primary);
+  }
+
+  &__bio {
+    margin-top: 0.8rem;
+    font-size: $font-size-sm;
+    color: color(text-muted);
+    line-height: $line-height-loose;
+  }
+}

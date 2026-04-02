@@ -1,0 +1,118 @@
+@use "../abstracts" as *;
+
+// ─────────────────────────────────────────────
+// Mobile Menu — 슬라이드 사이드 패널 (lg 미만)
+// ─────────────────────────────────────────────
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  @include viewport-height(100);
+  background: color(surface);
+  z-index: 800;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  padding: 9rem 3rem 4rem;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid color(border);
+
+      a {
+        display: block;
+        padding: 1.8rem 0;
+        font-size: var(--font-size-lg);
+        font-weight: 500;
+        color: color(text);
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover,
+        &:focus-visible,
+        &[aria-current="page"] {
+          color: color(primary);
+        }
+      }
+
+      &.is-active a {
+        color: color(primary);
+        font-weight: 700;
+      }
+    }
+  }
+
+  // lg 이상에서는 숨김
+  // @include respond(lg) {
+  //   display: none;
+  // }
+}
+
+// 백드롭 오버레이
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: color('overlay');
+  z-index: 799;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s;
+  @include viewport-height(100);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include respond(lg) {
+    display: none;
+  }
+}
+
+// 메뉴 열릴 때 body 스크롤 잠금
+body.is-menu-open {
+  overflow: hidden;
+}
+
+// ─────────────────────────────────────────────
+// 햄버거 버튼 아이콘 (header.scss와 연계)
+// ─────────────────────────────────────────────
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  pointer-events: none;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: color(text);
+    border-radius: 0.2rem;
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center;
+  }
+}
+
+// 열린 상태: X 모양으로 변환
+.header__utils--mobile[aria-expanded="true"] {
+  .hamburger {
+    span:nth-child(1) { transform: translateY(0.7rem) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    span:nth-child(3) { transform: translateY(-0.7rem) rotate(-45deg); }
+  }
+}

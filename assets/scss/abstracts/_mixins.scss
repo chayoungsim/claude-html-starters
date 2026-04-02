@@ -1,0 +1,76 @@
+@mixin ir {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 텍스트 말줄임 (N줄)
+@mixin ellipsis-multi($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+// 테마별 CSS 변수를 생성하는 믹스인
+@mixin generate-theme-variables($theme-map) {
+    @each $name, $value in $theme-map {
+        --color-#{$name}: #{$value};
+    }
+}
+
+@mixin flex-c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-sb{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin viewport-height($value: 100) {
+  // 1. 기본 브라우저 대응 (Fallback)
+  height: #{$value}vh;
+
+  // 2. JS 커스텀 변수 대응 (모바일 주소창 해결용)
+  height: calc(var(--vh, 1vh) * #{$value});
+
+  // 3. 최신 브라우저 동적 뷰포트 대응
+  @supports (height: 100dvh) {
+    height: #{$value}dvh;
+  }
+}
+
+@mixin custom-scrollbar($width: 6px, $thumb-color: #898989, $track-color: #ececec) {
+  &::-webkit-scrollbar {
+      width: $width;
+      height: $width;
+  }
+  &::-webkit-scrollbar-thumb {
+      background-color: $thumb-color;
+      border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track {
+      background-color: $track-color;
+  }
+
+  // 스크롤바 자리를 항상 확보하여 레이아웃 흔들림 방지
+  scrollbar-gutter: stable;
+  
+  // Firefox 대응 (표준 속성)
+  scrollbar-width: thin;
+  scrollbar-color: $thumb-color $track-color;
+}
