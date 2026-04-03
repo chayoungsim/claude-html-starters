@@ -8,14 +8,14 @@
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 800;
   width: 100%;
   @include viewport-height(100);
-  background: color(surface);
-  z-index: 800;
-  transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
   padding: 9rem 3rem 4rem;
+  background: color(surface);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
   &.is-open {
     transform: translateX(0);
@@ -51,11 +51,6 @@
       }
     }
   }
-
-  // lg 이상에서는 숨김
-  // @include respond(lg) {
-  //   display: none;
-  // }
 }
 
 // 백드롭 오버레이

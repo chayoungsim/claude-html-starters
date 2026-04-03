@@ -16,9 +16,9 @@
   <div id="wrap">
     <div data-include="../../pages/_inc/header.html"></div>
 
-    <main id="container" tabindex="-1">
+    <div id="container">
       <!-- 페이지 콘텐츠 -->
-    </main>
+    </div>
 
     <div data-include="../../pages/_inc/footer.html"></div>
   </div>
@@ -66,7 +66,7 @@
 - 시각적 크기를 위해 계층을 건너뛰는 것 금지 (h1 → h3 등)
 
 ## 접근성
-- `<main id="main-content" tabindex="-1">` — 스킵 네비게이션 링크 대상 필수
+- `<div id="container">` — 스킵 네비게이션 링크 대상 필수
 - 아이콘 버튼: `aria-label="설명"` 필수
 - 스크린 리더 전용 텍스트: `<span class="blind">텍스트</span>`
 - 이미지: 의미있는 이미지는 `alt="설명"`, 장식용은 `alt=""`

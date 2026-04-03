@@ -8,11 +8,10 @@
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
-    border-radius: 0.5rem;
+    border: 2px solid color("btn-outline-border"); 
     cursor: pointer;
     text-decoration: none;
-    transition: 
-        background-color 0.2s ease,
+    transition: background-color 0.2s ease,
         border-color     0.2s ease,
         color            0.2s ease,
         transform        0.1s ease,
@@ -28,47 +27,54 @@
 @mixin button-variant($bg, $text, $bg-hover, $border: transparent) {
   background-color: var(--color-#{$bg});
   color: var(--color-#{$text});
-  //border: 1px solid #{if($border == transparent, transparent, var(--color-#{$border}))};
-
-  &:hover:not(:disabled), &:focus-visible:not(:disabled) {
-    background-color: var(--color-#{$bg-hover});
-  }
-
-  &:active:not(:disabled) {
-    transform: scale(0.97);
-  }
+  border: 2px solid #{if($border == transparent, transparent, var(--color-#{$border}))};  
 }
 
-.btn {
-    &--primary {
+.button {
+    &.primary {
         @include button-base;
         @include button-variant(
             "btn-primary-bg",
             "btn-primary-text",
-            "btn-primary-bg-hover"
+            "btn-primary-bg-hover",
+            "btn-outline-border"
         );
+
+        background-color: transparent;
+        background-image: linear-gradient(to left, color("btn-outline-border") 50%, transparent 50%);
+        background-size: 210% 100%;
+        background-position: 100% bottom;
+        transition: all 0.4s ease;  
+        &:hover:not(:disabled), &:focus-visible:not(:disabled) {
+            background-position: left bottom;
+            color: color("btn-outline-border");
+        }      
         
     }    
-    &--outline {
+    &.outline {
         @include button-base;
         background-color: transparent;
         color: color("btn-outline-text");   
-        border: 1px solid color("btn-outline-border");
-
+        border: 2px solid color("btn-outline-border");    
+        background-image: linear-gradient(to left, transparent 50%, color("btn-outline-border") 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all 0.4s ease;  
         &:hover:not(:disabled), &:focus-visible:not(:disabled) {
-            background-color: color("btn-outline-bg-hover");
-            color: color("btn-outline-text-hover");
-        }
+            background-position: left bottom;
+            color: #fff;
+        } 
     }
-    &--secondary {
+    &.secondary {
         @include button-base;
         @include button-variant(
             "btn-secondary-bg",
             "btn-secondary-text",
-            "btn-secondary-bg-hover"
-        );
+            "btn-secondary-bg-hover",
+            "btn-secondary-bg"
+        );        
     }
-    &--danger {
+    &.danger {
         @include button-base;
         @include button-variant(
             "btn-danger-bg",
@@ -76,19 +82,40 @@
             "btn-danger-bg-hover"
         );
     }
+    
+    &.sm {
+        @include button-size(0, 0.85rem, $font-size-xs, fluid(2, 2.4));
+        border-radius: 1.2rem;
+    }
+    &.md {
+        @include button-size(0, 1.6rem, $font-size-sm, fluid(3, 4));
+        border-radius: 2rem;
+    }
+    &.lg {
+        @include button-size(0, 2rem, $font-size-md, fluid(4, 5));
+        border-radius: 2.4rem;
+    }
 
-    //Sizes
-    &--sm {
-        @include button-size(0, 0.85rem, $font-size-xs, 2rem);
-        border-radius: 0.4rem;
+    &.hover {
+        background-image: linear-gradient(to left, transparent 50%, color("btn-outline-border") 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all 0.4s ease;  
+        &:hover {
+            background-position: left bottom;
+            color: #fff;
+        }      
     }
-    &--md {
-        @include button-size(0, 1.6rem, $font-size-md, 4rem);
-        border-radius: 0.5rem;
-    }
-    &--lg {
-        @include button-size(0, 2rem, $font-size-md, 5rem);
-        border-radius: 0.6rem;
+    &.hover2 {
+        background-color: transparent;
+        background-image: linear-gradient(to left, color("btn-outline-border") 50%, transparent 50%);
+        background-size: 210% 100%;
+        background-position: 99% bottom;
+        transition: all 0.4s ease;  
+        &:hover {
+            background-position: left bottom;
+            color: color("btn-outline-border");
+        }      
     }
 }
 
