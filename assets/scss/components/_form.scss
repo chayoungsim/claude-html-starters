@@ -106,23 +106,70 @@ select {
 }
 
 // 체크박스 / 라디오 공통
-.form-check {
-  display: flex;
+
+.form-check{    
+  display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   cursor: pointer;
-
   input[type="checkbox"],
   input[type="radio"] {
-    width: 1.8rem;
-    height: 1.8rem;
-    flex-shrink: 0;
-    accent-color: color(primary);
-    cursor: pointer;
+      position: absolute;            
+      width: 2.6rem;
+      height: 2.6rem;
+      appearance: none;
   }
-
   label {
-    cursor: pointer;
-    margin: 0;
+      padding-left: 3.4rem;
+      position: relative;
+      line-height: 2.6rem;
+      cursor: pointer;
+      font-size: 1.6rem;
+      &::before {
+          content: '';
+          display: inline-block;
+          width: 2.6rem;
+          height: 2.6rem;
+          border: 1px solid color(primary);
+          position: absolute;
+          top: 0;
+          left: 0;
+          box-sizing: border-box;
+      }
+      &::after {
+          content: '';
+          display: block;
+      }
+  }
+  input[type="radio"] + label::before{
+      border-radius: 50%;
+  }
+  input[type="radio"]:checked + label::before{
+      border:1px solid color(primary)
+  }
+  input[type="radio"]:checked + label::after{            
+      border-radius: 50%;
+      width: 1em;
+      height: 1em;
+      background: color(primary);
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+  }
+  input[type="checkbox"]:checked + label::before{
+      border: 1px solid color(primary);
+      background: color(primary);
+  }
+  input[type="checkbox"]:checked + label::after{
+      width: 1.4rem;
+      height: 0.8rem;
+      border-top: 0;
+      border-right: 0;
+      border-bottom: 0.2rem solid color(bg);
+      border-left: 0.2rem solid color(bg); 
+      position: absolute;
+      left: 0.6rem;
+      top: 0.7rem;
+      transform: rotate(-45deg)
   }
 }

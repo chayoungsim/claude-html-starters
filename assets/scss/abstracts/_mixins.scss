@@ -1,3 +1,7 @@
+// ─────────────────────────────────────────────
+// 접근성
+// ─────────────────────────────────────────────
+
 @mixin ir {
   position: absolute;
   width: 1px;
@@ -23,6 +27,11 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+// ─────────────────────────────────────────────
+// 테마
+// ─────────────────────────────────────────────
+
 // 테마별 CSS 변수를 생성하는 믹스인
 @mixin generate-theme-variables($theme-map) {
     @each $name, $value in $theme-map {
@@ -30,16 +39,175 @@
     }
 }
 
-@mixin flex-c{
+// ─────────────────────────────────────────────
+// Flexbox
+// ─────────────────────────────────────────────
+
+// 가로·세로 중앙 정렬
+@mixin flex-c {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-@mixin flex-sb{
+
+// 양끝 정렬 + 세로 중앙
+@mixin flex-sb {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+// 세로 방향 중앙 정렬
+@mixin flex-col-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// 세로 방향 + 가로 시작 정렬
+@mixin flex-col($gap: null) {
+  display: flex;
+  flex-direction: column;
+  @if $gap { gap: $gap; }
+}
+
+// ─────────────────────────────────────────────
+// Grid
+// ─────────────────────────────────────────────
+
+// 반응형 자동 컬럼 그리드
+// 사용: @include auto-grid(28rem, 2.4rem)
+@mixin auto-grid($min-col: 24rem, $gap: 2.4rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-col, 1fr));
+  gap: $gap;
+}
+
+// 고정 컬럼 그리드
+// 사용: @include grid(3, 2.4rem)
+@mixin grid($cols: 3, $gap: 2.4rem) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+// ─────────────────────────────────────────────
+// 포지션
+// ─────────────────────────────────────────────
+
+// 절대 위치 중앙 정렬 (부모 relative 필요)
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 절대 위치로 전체 채우기
+@mixin abs-fill {
+  position: absolute;
+  inset: 0;
+}
+
+// ─────────────────────────────────────────────
+// 비율 & 크기
+// ─────────────────────────────────────────────
+
+// 비율 유지 박스 (16:9 기본)
+// 사용: @include aspect-ratio(16, 9)
+@mixin aspect-ratio($w: 16, $h: 9) {
+  aspect-ratio: #{$w} / #{$h};
+  overflow: hidden;
+}
+
+// 정사각형
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+// 원형 (정사각형 + border-radius)
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+// ─────────────────────────────────────────────
+// 시각 효과
+// ─────────────────────────────────────────────
+
+// hover/focus 트랜지션 (투명도)
+@mixin hover-opacity($val: 0.75, $duration: 0.2s) {
+  transition: opacity $duration ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: $val;
+  }
+}
+
+// 포커스 링 (접근성)
+@mixin focus-ring($color: var(--color-primary), $offset: 2px) {
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: $offset;
+  }
+}
+
+// 카드 hover 올라오는 효과
+@mixin lift($y: -0.4rem, $shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.12)) {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY($y);
+    box-shadow: $shadow;
+  }
+}
+
+// 오버레이 그라디언트 (이미지 위 텍스트 가독성)
+// 사용: @include overlay-gradient(180deg, 0.6)
+@mixin overlay-gradient($deg: 180deg, $opacity: 0.5) {
+  &::after {
+    content: "";
+    @include abs-fill;
+    background: linear-gradient($deg, transparent 30%, rgba(0, 0, 0, $opacity) 100%);
+    pointer-events: none;
+  }
+}
+
+// ─────────────────────────────────────────────
+// 타이포그래피
+// ─────────────────────────────────────────────
+
+// 반응형 제목 축약
+// 사용: @include heading-fluid(3.2rem, 5.6rem)
+@mixin heading-fluid($min, $max) {
+  font-size: clamp($min, 4vw, $max);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+// ─────────────────────────────────────────────
+// 상태 (is-* 클래스 전용)
+// ─────────────────────────────────────────────
+
+// 숨김 → 보임 페이드 전환 (is-visible 토글)
+@mixin fade-toggle($duration: 0.3s) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $duration ease, visibility $duration ease;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// ─────────────────────────────────────────────
+// 뷰포트 & 스크롤
+// ─────────────────────────────────────────────
 
 @mixin viewport-height($value: 100) {
   // 1. 기본 브라우저 대응 (Fallback)

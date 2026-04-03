@@ -751,8 +751,8 @@ h3 {
   overflow-y: auto;
   padding: 9rem 3rem 4rem;
   background: var(--color-surface);
-  transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
 }
 @supports (height: 100dvh) {
   .mobile-menu {
@@ -1188,22 +1188,70 @@ select {
 }
 
 .form-check {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   cursor: pointer;
 }
 .form-check input[type=checkbox],
 .form-check input[type=radio] {
-  width: 1.8rem;
-  height: 1.8rem;
-  flex-shrink: 0;
-  accent-color: var(--color-primary);
-  cursor: pointer;
+  position: absolute;
+  width: 2.6rem;
+  height: 2.6rem;
+  appearance: none;
 }
 .form-check label {
+  padding-left: 3.4rem;
+  position: relative;
+  line-height: 2.6rem;
   cursor: pointer;
-  margin: 0;
+  font-size: 1.6rem;
+}
+.form-check label::before {
+  content: "";
+  display: inline-block;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid var(--color-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.form-check label::after {
+  content: "";
+  display: block;
+}
+.form-check input[type=radio] + label::before {
+  border-radius: 50%;
+}
+.form-check input[type=radio]:checked + label::before {
+  border: 1px solid var(--color-primary);
+}
+.form-check input[type=radio]:checked + label::after {
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  background: var(--color-primary);
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+.form-check input[type=checkbox]:checked + label::before {
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+}
+.form-check input[type=checkbox]:checked + label::after {
+  width: 1.4rem;
+  height: 0.8rem;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0.2rem solid var(--color-bg);
+  border-left: 0.2rem solid var(--color-bg);
+  position: absolute;
+  left: 0.6rem;
+  top: 0.7rem;
+  transform: rotate(-45deg);
 }
 
 .section-hero {

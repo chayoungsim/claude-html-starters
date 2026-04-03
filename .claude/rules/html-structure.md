@@ -95,10 +95,10 @@
 ## 버튼 패턴
 ```html
 <!-- 링크형 버튼 -->
-<a href="#" class="btn btn--primary btn--md">텍스트</a>
+<a href="#" class="button primary md">텍스트</a>
 
 <!-- 동작형 버튼 -->
-<button type="button" class="btn btn--secondary btn--md">텍스트</button>
+<button type="button" class="button outline md">텍스트</button>
 
 <!-- 아이콘 버튼 -->
 <button type="button" class="btn-icon" aria-label="메뉴 열기">
