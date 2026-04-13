@@ -740,6 +740,10 @@ h3 {
   max-width: 100%;
 }
 
+.hero__content {
+  padding-top: 10vh;
+}
+
 .mobile-menu {
   position: fixed;
   top: 0;
