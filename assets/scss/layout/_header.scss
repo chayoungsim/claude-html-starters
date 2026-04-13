@@ -41,7 +41,6 @@ $sub-menu-height: 30rem;
   &__logo {  
     position: relative; 
     z-index: 2; 
-    width: 20rem;
     height: 100%;    
     a {
       @include flex-c;
@@ -59,6 +58,7 @@ $sub-menu-height: 30rem;
   &.is-scrolled {
     height: 6rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #fff;
   }
 
   // 스크롤 다운 시 헤더 숨김

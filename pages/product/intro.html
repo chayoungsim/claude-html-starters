@@ -6,6 +6,40 @@
     <meta name="description" content="브랜드명 제품 소개 페이지입니다.">
     <title>제품 소개 | 브랜드명</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+      .imgs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+      }
+      .page-hero {
+        position: relative;
+        padding:0;
+        height: 60vh;
+        overflow: hidden;
+      }
+      .page-hero .container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left: 0;
+        padding-top:10rem;
+      }
+      .main-bg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .main-bg__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    </style>
 </head>
 <body>
     <p id="accessibility"><a href="#container">본문바로가기</a></p>
@@ -16,24 +50,178 @@
 
             <!-- 페이지 히어로 -->
             <section class="page-hero">
+                <div class="main-bg">
+                    <img src="../../assets/images/bushcraft-fuer-anfaenger-guide-desktop.jpg" alt="제품 소개 이미지" class="main-bg__image">
+                </div>
                 <div class="container">
                     <p class="page-hero__label">Product</p>
-                    <h1 class="page-hero__title">제품 소개</h1>
-                    <p class="page-hero__desc">브랜드명의 제품을 소개합니다.</p>
+                    <h1 class="page-hero__title">
+                      <span class="word">제</span>
+                      <span class="word">품</span>
+                      <span class="word">소</span>
+                      <span class="word">개</span>
+                    </h1>
+                    <p class="page-hero__desc">
+                      <span class="word">브</span>
+                      <span class="word">랜</span>
+                      <span class="word">드</span>
+                      <span class="word">명</span>
+                      <span class="word">의</span>
+                      <span class="word">제</span>
+                      <span class="word">품</span>
+                      <span class="word">소</span>
+                      <span class="word">개</span>
+                      <span class="word">소</span>
+                      <span class="word">입</span>
+                      <span class="word">니</span>
+                      <span class="word">다</span>
+                    </p>
                 </div>
             </section>
 
             <!-- 콘텐츠 섹션 -->
             <section class="section-intro">
                 <div class="container">
-                    <!-- 페이지 콘텐츠 -->
+                    <!-- 페이지 콘텐츠 -->    
+                    <!-- 히어로 섹션 -->
+                    <section class="section-hero">
+                        <div class="container">
+                            <div class="hero__content">
+                                <p class="hero__label">Welcome to Brand</p>
+                                <h2 class="hero__title">
+                                    브랜드의 핵심<br>
+                                    메시지를 작성하세요
+                                </h2>
+                                <p class="hero__desc">
+                                    브랜드의 가치와 서비스를 간결하게 설명하는<br>
+                                    서브 텍스트가 들어갑니다.
+                                </p>
+                                <div class="hero__actions">
+                                    <a href="../newsroom/project.html" class="button primary lg"><span>프로젝트 보기</span></a>
+                                    <a href="../company/about.html" class="button outline lg"><span>회사 소개</span></a>
+                                    <button type="button" class="button secondary lg"><span>회사소개</span></button>
+                                    <button type="button" class="button danger lg"><span>회사소개</span></button>
+                                </div>
+                                <br>
+                                <div class="hero__actions">
+                                    <a href="../newsroom/project.html" class="button primary md"><span>프로젝트 보기</span></a>
+                                    <a href="../company/about.html" class="button outline md"><span>회사 소개</span></a>
+                                    <button type="button" class="button secondary md"><span>회사소개</span></button>
+                                    <button type="button" class="button danger md"><span>회사소개</span></button>
+                                </div>
+                                <br>
+                                <div class="hero__actions">
+                                    <a href="../newsroom/project.html" class="button primary sm"><span>프로젝트 보기</span></a>
+                                    <a href="../company/about.html" class="button outline sm"><span>회사 소개</span></a>
+                                    <button type="button" class="button secondary sm"><span>회사소개</span></button>
+                                    <button type="button" class="button danger sm"><span>회사소개</span></button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 서비스 소개 섹션 -->
+                    <section class="section-services">
+                        <div class="container">
+                            <div class="section-header">
+                                <p class="section-label">What We Do</p>
+                                <h2 class="section-title">우리가 제공하는 서비스</h2>
+                                <p class="section-desc">
+                                    고객의 성장을 위한 최적의 솔루션을 제공합니다.
+                                </p>
+                            </div>
+
+                            <ul class="services-grid">
+                                <li class="service-card">
+                                    <div class="service-card__icon" aria-hidden="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                            <path d="M3 9h18M9 21V9"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="service-card__title">서비스 명칭 1</h3>
+                                    <p class="service-card__desc">서비스에 대한 간략한 설명을 작성합니다. 핵심 가치와 혜택을 중심으로 작성해주세요.</p>
+                                </li>
+                                <li class="service-card">
+                                    <div class="service-card__icon" aria-hidden="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M12 8v4l3 3"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="service-card__title">서비스 명칭 2</h3>
+                                    <p class="service-card__desc">서비스에 대한 간략한 설명을 작성합니다. 핵심 가치와 혜택을 중심으로 작성해주세요.</p>
+                                </li>
+                                <li class="service-card">
+                                    <div class="service-card__icon" aria-hidden="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                            <circle cx="9" cy="7" r="4"/>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="service-card__title">서비스 명칭 3</h3>
+                                    <p class="service-card__desc">서비스에 대한 간략한 설명을 작성합니다. 핵심 가치와 혜택을 중심으로 작성해주세요.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- CTA 섹션 -->
+                    <section class="section-cta" style="height: 200vh;">
+                        <div class="container">
+                            <div class="cta__inner">
+                                <h2 class="cta__title">함께 시작할 준비가 되셨나요?</h2>
+                                <p class="cta__desc">지금 바로 문의하시면 전문가가 빠르게 답변드립니다.</p>
+                                <a href="mailto:hello@brand.com" class="button primary lg">문의하기</a>
+
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
 
         </main>
 
-        <div data-include="../../pages/_inc/footer.html"></div>
+       <div data-include="../../pages/_inc/footer.html"></div>
     </div>
     <script src="../../assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+    <script type="module">
+      const { animate, stagger } = Motion
+
+    // 각 단어(.word)가 0.1초 간격으로 순차적으로 등장
+    animate(".word", 
+      { y: [20, 0], opacity: [0, 1] }, 
+      { 
+        delay: stagger(0.1), 
+        duration: 0.8, 
+        easing: [0.17, 0.67, 0.83, 0.67] // 부드러운 베지에 곡선
+      }
+    )
+
+    animate(".main-bg", 
+      { scale: [1, 1.1] }, 
+      { 
+        duration: 10, // 아주 천천히
+        direction: "alternate", 
+        repeat: Infinity, 
+        easing: "linear" 
+      }
+    )
+
+    const layers = document.querySelectorAll(".parallax-layer");
+
+    window.addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
+      const moveX = (clientX - window.innerWidth / 2) * 0.02; // 움직임 강도 조절
+      const moveY = (clientY - window.innerHeight / 2) * 0.02;
+
+      layers.forEach((layer) => {
+        animate(layer, { x: moveX, y: moveY }, { duration: 0.5 })
+      });
+    });
+    </script>
 </body>
 </html>

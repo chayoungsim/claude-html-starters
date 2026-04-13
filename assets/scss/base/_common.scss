@@ -52,3 +52,8 @@ h3 {
         z-index: 0;
     }
 }
+
+.gsap-reveal {
+  //opacity: 0;
+  will-change: transform, opacity;
+}

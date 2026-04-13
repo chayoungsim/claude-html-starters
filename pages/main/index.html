@@ -6,6 +6,7 @@
     <meta name="description" content="브랜드명 공식 웹사이트입니다. 브랜드 슬로건을 입력해주세요.">
     <title>홈 | 브랜드명</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
     <p id="accessibility"><a href="#container">본문바로가기</a></p>
@@ -14,108 +15,223 @@
 
         <main id="container" tabindex="-1">
 
-            <!-- 히어로 섹션 -->
-            <section class="section-hero">
-                <div class="container">
-                    <div class="hero__content">
-                        <p class="hero__label">Welcome to Brand</p>
-                        <h2 class="hero__title">
-                            브랜드의 핵심<br>
-                            메시지를 작성하세요
-                        </h2>
-                        <p class="hero__desc">
-                            브랜드의 가치와 서비스를 간결하게 설명하는<br>
-                            서브 텍스트가 들어갑니다.
-                        </p>
-                        <div class="hero__actions">
-                            <a href="../newsroom/project.html" class="button primary lg"><span>프로젝트 보기</span></a>
-                            <a href="../company/about.html" class="button outline lg"><span>회사 소개</span></a>
-                            <button type="button" class="button secondary lg"><span>회사소개</span></button>
-                            <button type="button" class="button danger lg"><span>회사소개</span></button>
-                        </div>
-                        <br>
-                        <div class="hero__actions">
-                            <a href="../newsroom/project.html" class="button primary md"><span>프로젝트 보기</span></a>
-                            <a href="../company/about.html" class="button outline md"><span>회사 소개</span></a>
-                            <button type="button" class="button secondary md"><span>회사소개</span></button>
-                            <button type="button" class="button danger md"><span>회사소개</span></button>
-                        </div>
-                        <br>
-                        <div class="hero__actions">
-                            <a href="../newsroom/project.html" class="button primary sm"><span>프로젝트 보기</span></a>
-                            <a href="../company/about.html" class="button outline sm"><span>회사 소개</span></a>
-                            <button type="button" class="button secondary sm"><span>회사소개</span></button>
-                            <button type="button" class="button danger sm"><span>회사소개</span></button>
-                        </div>
-                        <br>
-                    </div>
+            <div class="trigger">
+              <div class="path">
+                <div class="video-frame">
+                    <video  preload="auto" muted loop playsInline>
+                        <source type="video/mp4" src="../../assets/images/home-teaser.mp4" />
+                    </video>
                 </div>
-            </section>
+              </div>                
+            </div>
+            <div class="section2" style="height: 100vh;">
+                <div class="static">
+                    <h2 class="split">브랜드 슬로건을 입력해주세요.</h2>
+                    <p class="section2__desc split2">브랜드에 대한 간략한 설명이 들어갑니다. 브랜드의 핵심 가치나 비전을 간결하게 표현해주세요.</p>
+                    <a href="../company/company.html" class="button primary lg"><span>회사소개 바로가기</span></a>
+                </div>                
+            </div>
 
-            <!-- 서비스 소개 섹션 -->
-            <section class="section-services">
+            <div class="section3">
                 <div class="container">
-                    <div class="section-header">
-                        <p class="section-label">What We Do</p>
-                        <h2 class="section-title">우리가 제공하는 서비스</h2>
-                        <p class="section-desc">
-                            고객의 성장을 위한 최적의 솔루션을 제공합니다.
-                        </p>
+                    <div class="section3__header">
+                        <p class="section3__tag">News</p>
+                        <h2 class="section3__title">Stay updated with the latest from Hanwha Robotics.</h2>
                     </div>
-
-                    <ul class="services-grid">
-                        <li class="service-card">
-                            <div class="service-card__icon" aria-hidden="true">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                    <path d="M3 9h18M9 21V9"/>
-                                </svg>
+                    <div class="swiper news-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2026-03-10</p>
+                                    <h3 class="news-card__title">News title 01</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
                             </div>
-                            <h3 class="service-card__title">서비스 명칭 1</h3>
-                            <p class="service-card__desc">서비스에 대한 간략한 설명을 작성합니다. 핵심 가치와 혜택을 중심으로 작성해주세요.</p>
-                        </li>
-                        <li class="service-card">
-                            <div class="service-card__icon" aria-hidden="true">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M12 8v4l3 3"/>
-                                </svg>
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2026-02-18</p>
+                                    <h3 class="news-card__title">News title 02</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
                             </div>
-                            <h3 class="service-card__title">서비스 명칭 2</h3>
-                            <p class="service-card__desc">서비스에 대한 간략한 설명을 작성합니다. 핵심 가치와 혜택을 중심으로 작성해주세요.</p>
-                        </li>
-                        <li class="service-card">
-                            <div class="service-card__icon" aria-hidden="true">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2026-01-30</p>
+                                    <h3 class="news-card__title">News title 03</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
                             </div>
-                            <h3 class="service-card__title">서비스 명칭 3</h3>
-                            <p class="service-card__desc">서비스에 대한 간략한 설명을 작성합니다. 핵심 가치와 혜택을 중심으로 작성해주세요.</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- CTA 섹션 -->
-            <section class="section-cta" style="height: 200vh;">
-                <div class="container">
-                    <div class="cta__inner">
-                        <h2 class="cta__title">함께 시작할 준비가 되셨나요?</h2>
-                        <p class="cta__desc">지금 바로 문의하시면 전문가가 빠르게 답변드립니다.</p>
-                        <a href="mailto:hello@brand.com" class="button primary lg">문의하기</a>
-
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2025-12-12</p>
+                                    <h3 class="news-card__title">News title 04</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2025-11-20</p>
+                                    <h3 class="news-card__title">News title 05</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2025-10-15</p>
+                                    <h3 class="news-card__title">News title 06</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2025-09-08</p>
+                                    <h3 class="news-card__title">News title 07</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2025-08-22</p>
+                                    <h3 class="news-card__title">News title 08</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2025-07-14</p>
+                                    <h3 class="news-card__title">News title 09</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="news-card">
+                                    <p class="news-card__date">2025-06-30</p>
+                                    <h3 class="news-card__title">News title 10</h3>
+                                    <p class="news-card__desc">Short teaser text can go here. Keep it to 2 lines max.</p>
+                                </article>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
-
+                </div>    
+            </div>
+            
         </main>
 
         <!-- 푸터 include -->
         <div data-include="../../pages/_inc/footer.html"></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/gsap.min.js"></script>
+    <script src="../../assets/js/ScrollTrigger.min.js"></script>
+    <script src="../../assets/js/SplitText.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger, SplitText);
+        const video = document.querySelector('.video-frame video');
+        const triggerElement = document.querySelector('.trigger');
+        video.play();
+
+        const st = ScrollTrigger.create({
+            trigger: '.trigger',
+            start: 'top top',
+            end: 'bottom top',
+            onEnter : () => {
+                triggerElement.classList.add('fullScreen');
+                //video.play();
+            },
+            onLeave : () => {
+                //video.pause();
+                triggerElement.classList.remove('fullScreen');
+
+            },
+            onEnterBack : () => {
+                triggerElement.classList.add('fullScreen');
+                //video.play();
+            },
+            onLeaveBack : () => {
+                triggerElement.classList.remove('fullScreen');  
+                //video.pause();
+            }
+        }); 
+
+        const split = new SplitText('.split', { type: 'chars' });
+        const split2 = new SplitText('.split2', { type: 'lines' });
+
+        // section2 상단이 viewport top에 닿을 때 모션 실행
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.section2',
+                start: 'top top',
+                once: true
+            }
+        });
+
+        tl.from(split.chars, {
+            x: 150,
+            opacity: 0,
+            duration: 0.7,
+            ease: "power4",
+            stagger: 0.04
+        })
+        .from(split2.lines, {
+            rotationX: -100,
+            transformOrigin: "50% 50% -160px",
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3",
+            stagger: 0.25
+        }, "-=0.3")
+        .fromTo('.button',{
+            opacity:0,
+            duration: 0.8,
+            ease: "power1",
+            y: 50,
+        }, {
+            opacity:1,
+            y:0
+        })
+
+        // ─── section3 Swiper 초기화 ───────────────────────────────────
+        const CENTER_SLIDE = 4; // 10개 기준 중앙 인덱스
+
+        const newsSwiper = new Swiper('.news-swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+            centeredSlides: true,
+            initialSlide: CENTER_SLIDE,
+            loop: true,
+            speed: 600,
+        });
+
+        // 가운데 아이템 기준 좌우 펼쳐지는 진입 모션
+        // loop 모드에서 Swiper가 생성하는 duplicate 슬라이드는 제외
+        ScrollTrigger.create({
+            trigger: '.section3',
+            start: 'top center',
+            once: true,
+            onEnter: () => {
+                const originals = document.querySelectorAll(
+                    '.news-swiper .swiper-slide:not(.swiper-slide-duplicate)'
+                );
+
+                originals.forEach((slide, i) => {
+                    const dist = i - CENTER_SLIDE; // 음수=왼쪽, 양수=오른쪽
+
+                    gsap.from(slide, {
+                        // 각 슬라이드가 중앙 위치에서 자기 자리로 퍼져나가는 효과
+                        x: -dist * 140,
+                        opacity: 0,
+                        scale: 0.85,
+                        duration: 1,
+                        ease: 'power3.out',
+                        // 중앙(dist=0)이 먼저, 바깥일수록 늦게 등장
+                        delay: Math.abs(dist) * 0.1,
+                        clearProps: 'transform,opacity', // 애니메이션 후 Swiper 복원
+                    });
+                });
+            },
+        });
+    </script>
 </body>
 </html>
